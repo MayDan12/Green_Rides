@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "vehicleType": "EV Ride",
+    "subtitle": "Zero Emissions",
+    "eta": "3 min away",
+    "price": 12.5,
+    "co2Saved": 1.2,
+    "isRecommended": true,
+    "distance": "10.5 km",
+    "time": "~15 min",
+    "capacity": "2 passengers"
+  },
+  {
+    "id": 2,
+    "vehicleType": "Eco-Pool",
+    "subtitle": "Low CO₂",
+    "eta": "5 min away",
+    "price": 8.0,
+    "co2Saved": 0.9,
+    "isRecommended": false,
+    "distance": "8.0 km",
+    "time": "~12 min",
+    "capacity": "2 passengers"
+  },
+  {
+    "id": 3,
+    "vehicleType": "Standard",
+    "subtitle": "Standard emissions",
+    "eta": "2 min away",
+    "price": 11.0,
+    "co2Saved": 0.0,
+    "isRecommended": false,
+    "distance": "5.0 km",
+    "time": "~10 min",
+    "capacity": "2 passengers"
+  }
+]
