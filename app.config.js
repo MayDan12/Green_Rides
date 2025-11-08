@@ -1,0 +1,60 @@
+export default {
+  expo: {
+    name: "Greenride",
+    slug: "Greenride",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/greenride.png",
+    scheme: "greenapp",
+    userInterfaceStyle: "automatic",
+    newArchEnabled: true,
+    splash: {
+      image: "./assets/greenride.png",
+      resizeMode: "contain",
+      backgroundColor: "#10B981",
+    },
+    ios: {
+      supportsTablet: true,
+    },
+    android: {
+      adaptiveIcon: {
+        backgroundColor: "#E6F4FE",
+        foregroundImage: "./assets/greenride.png",
+        backgroundImage: "./assets/images/android-icon-background.png",
+        monochromeImage: "./assets/images/android-icon-monochrome.png",
+      },
+      edgeToEdgeEnabled: true,
+      predictiveBackGestureEnabled: false,
+      package: "com.mayowadan.Greenride",
+    },
+    web: {
+      output: "static",
+      favicon: "./assets/greenride.png",
+    },
+    plugins: [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          image: "./assets/images/splash-icon.png",
+          imageWidth: 200,
+          resizeMode: "contain",
+          backgroundColor: "#ffffff",
+          dark: {
+            backgroundColor: "#000000",
+          },
+        },
+      ],
+    ],
+    experiments: {
+      typedRoutes: true,
+      reactCompiler: true,
+    },
+    extra: {
+      router: {},
+      eas: {
+        projectId: "a144a3fe-e47c-4bde-80ec-e833af54a1c8",
+      },
+    },
+  },
+};
