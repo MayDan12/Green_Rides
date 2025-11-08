@@ -5,7 +5,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { Tabs } from "expo-router";
-import { Home, User } from "lucide-react-native";
+import { Car, User } from "lucide-react-native";
 // import { useColorScheme } from "react-native";
 // import { ThemeProvider } from "@/constants/theme";
 
@@ -20,10 +20,10 @@ export default function TabLayout() {
         }}
       >
         <Tabs.Screen
-          name="index"
+          name="home"
           options={{
-            title: "Home",
-            tabBarIcon: ({ color }) => <Home size={24} color={color} />,
+            title: "Rides",
+            tabBarIcon: ({ color }) => <Car size={24} color={color} />,
           }}
         />
         <Tabs.Screen

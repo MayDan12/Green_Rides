@@ -11,6 +11,18 @@ export type Ride = {
   capacity?: string;
 };
 
+export interface CompletedRide {
+  id: number;
+  date: string;
+  time: string;
+  vehicleType: string;
+  from: string;
+  to: string;
+  price: number;
+  co2Saved: number;
+  status: string;
+}
+
 export type RootStackParamList = {
   Splash: undefined;
   Home: undefined;

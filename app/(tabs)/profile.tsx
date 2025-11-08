@@ -99,10 +99,12 @@
 import { useRideStore } from "@/app/store/useRideStore";
 import { useColorScheme } from "@/hooks/use-color-scheme.web";
 import { useTheme } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 import * as SystemUI from "expo-system-ui";
 import {
   Award,
   Calendar,
+  ChevronRight,
   HelpCircle,
   Leaf,
   LogOut,
@@ -121,13 +123,19 @@ export default function ProfileScreen() {
   const theme = useTheme();
   const scheme = useColorScheme();
   const isDark = scheme === "dark";
+  const router = useRouter();
 
   const toggleDarkMode = () => {
     SystemUI.setBackgroundColorAsync(isDark ? "#FFFFFF" : "#121212");
   };
 
   const menuItems = [
-    { icon: Calendar, label: "Ride History", color: "#10B981" },
+    {
+      icon: Calendar,
+      label: "Ride History",
+      color: "#10B981",
+      onPress: () => router.push("/history"),
+    },
     { icon: Award, label: "Achievements", color: "#F59E0B" },
     { icon: Shield, label: "Safety Center", color: "#3B82F6" },
     { icon: HelpCircle, label: "Help & Support", color: "#6B7280" },
@@ -506,6 +514,7 @@ export default function ProfileScreen() {
                     ? "rgba(255,255,255,0.1)"
                     : "rgba(0,0,0,0.05)",
                 })}
+                onPress={item.onPress}
               >
                 <View
                   style={{
@@ -533,6 +542,13 @@ export default function ProfileScreen() {
                     }}
                   >
                     {item.label}
+                  </Text>
+                  <Text>
+                    {item.label === "Ride History" ? (
+                      <ChevronRight color="white" />
+                    ) : (
+                      ""
+                    )}
                   </Text>
                 </View>
               </Pressable>

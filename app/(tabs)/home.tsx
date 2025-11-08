@@ -197,14 +197,28 @@
 // }
 
 import { useRideStore } from "@/app/store/useRideStore";
-import { Link } from "expo-router";
-import { FlatList, TextInput, TouchableOpacity, View } from "react-native";
+import { Link, useRouter } from "expo-router";
+import {
+  FlatList,
+  Pressable,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
 import { ThemedText } from "@/components/themed-text";
 import { Ride } from "@/types";
 import { useTheme } from "@react-navigation/native";
-import { Car, MapPin, Search, Star, Users, Zap } from "lucide-react-native";
+import {
+  Car,
+  History,
+  MapPin,
+  Search,
+  Star,
+  Users,
+  Zap,
+} from "lucide-react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -311,7 +325,7 @@ function RideCard({ ride }: { ride: Ride }) {
                 {ride.subtitle}
               </ThemedText>
             </View>
-            <TouchableOpacity
+            {/* <TouchableOpacity
               style={{
                 backgroundColor: "#50C878",
                 borderRadius: 10,
@@ -319,7 +333,7 @@ function RideCard({ ride }: { ride: Ride }) {
               }}
             >
               <ThemedText>More Info</ThemedText>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </View>
         </View>
 
@@ -371,21 +385,40 @@ function RideCard({ ride }: { ride: Ride }) {
 
 export default function HomeScreen() {
   const { rides } = useRideStore();
+  const router = useRouter();
   const theme = useTheme();
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <View style={{ flex: 1, paddingHorizontal: 16 }}>
         {/* Header */}
-        <View style={{ paddingBottom: 10, paddingTop: 20 }}>
-          <ThemedText
-            style={{ fontSize: 25, fontWeight: "800", marginBottom: 3 }}
-          >
-            GreenApp
-          </ThemedText>
-          <ThemedText style={{ fontSize: 16, opacity: 0.7 }}>
-            Your eco-friendly option
-          </ThemedText>
+        <View
+          style={{
+            paddingBottom: 10,
+            paddingTop: 20,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <View>
+            <ThemedText
+              style={{ fontSize: 25, fontWeight: "800", marginBottom: 3 }}
+            >
+              Green Ride
+            </ThemedText>
+            <ThemedText style={{ fontSize: 16, opacity: 0.7 }}>
+              Your eco-friendly option
+            </ThemedText>
+          </View>
+          <View>
+            <Pressable onPress={() => router.push("/history")}>
+              <ThemedText>
+                <History size={28} color={theme.colors.text} />
+              </ThemedText>
+            </Pressable>
+          </View>
         </View>
 
         {/* Search Bar */}
