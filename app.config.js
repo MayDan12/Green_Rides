@@ -17,6 +17,8 @@ export default {
       supportsTablet: true,
     },
     android: {
+      versionCode: 1,
+      jsEngine: "hermes",
       adaptiveIcon: {
         backgroundColor: "#E6F4FE",
         foregroundImage: "./assets/greenride.png",
@@ -46,10 +48,7 @@ export default {
         },
       ],
     ],
-    experiments: {
-      typedRoutes: true,
-      reactCompiler: true,
-    },
+
     extra: {
       router: {},
       eas: {

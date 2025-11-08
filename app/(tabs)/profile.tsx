@@ -417,7 +417,7 @@ export default function ProfileScreen() {
               style={{
                 fontSize: 18,
                 fontWeight: "700",
-                color: "#FFFFFF",
+                color: theme.colors.text,
               }}
             >
               EcoPoints
@@ -428,7 +428,7 @@ export default function ProfileScreen() {
             style={{
               fontSize: 36,
               fontWeight: "800",
-              color: "#FFFFFF",
+              color: theme.colors.text,
               marginBottom: 8,
             }}
           >
@@ -438,8 +438,8 @@ export default function ProfileScreen() {
           <Text
             style={{
               fontSize: 14,
-              color: "rgba(255,255,255,0.8)",
               marginBottom: 16,
+              color: theme.colors.text,
             }}
           >
             Keep riding green to earn more points and unlock exclusive rewards
